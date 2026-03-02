@@ -1,0 +1,8 @@
+export const MainContent = () => {
+  return (
+    <div className="bg-pink-600">
+      <h1>Orebayo</h1>
+      <h2>Oluwapelumi</h2>
+    </div>
+  );
+};
