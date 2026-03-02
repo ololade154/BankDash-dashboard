@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+
+.main {
+  width: calc(100vw - 280px);
+  position: absolute;
+  right: 0;
+  z-index: -100;
+}
+.side-bar {
+  width: 260px;
+  position: fixed;
+  left: 0;
+  height: 100vh;
+}
+.layout {
+  position: relative;
+}
