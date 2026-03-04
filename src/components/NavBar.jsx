@@ -31,7 +31,7 @@ export const NavBar = () => {
       </div>
 
       {/* Desktop nav */}
-      <div className="hidden md:flex bg-white h-20 fixed w-full z-10 top-0 justify-between items-center py-6 px-12">
+      <div className=" hidden md:flex bg-yellow-200 w-[calc(100vw-260px)] h-20 fixed z-10 top-0 justify-between items-center py-6 px-12">
         <div className="bg-red-500">search bar</div>
         <div className="flex items-center gap-4">
           <NavContent title="OverView" />
