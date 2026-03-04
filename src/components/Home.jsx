@@ -3,9 +3,12 @@ import { SideBar } from './SideBar';
 
 export const Home = () => {
   return (
-    <div className="layout">
-      <SideBar />
-      <Main />
-    </div>
+    <>
+      <div className="relative">
+        <SideBar />
+
+        <Main />
+      </div>
+    </>
   );
 };
