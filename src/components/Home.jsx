@@ -4,8 +4,9 @@ import { SideBar } from './SideBar';
 export const Home = () => {
   return (
     <>
-      <div className="layout">
+      <div className="relative">
         <SideBar />
+
         <Main />
       </div>
     </>
