@@ -1,8 +1,7 @@
 import { Routes, Route } from 'react-router';
-
 import { HomePage } from './components/homePage';
 import { Login } from './components/Login';
-import { Layout } from './components/Layout';
+import { Layout } from './components/layout';
 export const App = () => {
   return (
     <Routes>

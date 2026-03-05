@@ -11,7 +11,7 @@ export const NavBar = () => {
   return (
     <>
       {/* mobile nav */}
-      <div className="bg-white h-35 fixed w-full z-10 flex flex-col py-4 px-8 gap-y-4 right-0 left-0 md:hidden">
+      <div className="bg-white h-35 fixed w-full z-10 flex flex-col py-4 px-6 gap-y-4 right-0 left-0 md:hidden">
         <div className="flex justify-between items-center border-2 border-amber-500">
           <div onClick={toggleIcon}>
             {open ? (
@@ -29,7 +29,6 @@ export const NavBar = () => {
         </div>
         <div className="border-2 border-blue-500">search bar</div>
       </div>
-
       {/* Desktop nav */}
       <div className=" hidden md:flex bg-green-200 w-[calc(100vw-260px)] h-20 fixed z-10 top-0 justify-between items-center py-6 px-12">
         <div className="bg-red-500">search bar</div>
