@@ -1,13 +1,15 @@
-import Layout from "./components/layout";
-import { HomePage } from "./components/homePage";
-import DetailsPage from "./components/detailsPage";
+import { Routes, Route } from 'react-router';
 
-
+import { HomePage } from './components/homePage';
+import { Login } from './components/Login';
+import { Layout } from './components/Layout';
 export const App = () => {
   return (
-    <Layout>
-      <DetailsPage/>
-      {/* <HomePage /> */}
-    </Layout>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<HomePage />} />
+      </Route>
+      <Route path="/login" element={<Login />} />
+    </Routes>
   );
 };
