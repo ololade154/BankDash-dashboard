@@ -1,8 +1,8 @@
 export const HomePage = () => {
   return (
-    <di>
+    <div>
       <h1>Orebayo</h1>
       <h2>Oluwapelumi</h2>
-    </di>
+    </div>
   );
 };
