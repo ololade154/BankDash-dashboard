@@ -22,7 +22,7 @@ export const Layout = () => {
   return (
     <div className="relative">
       <SideBar />
-      <div className="flex flex-col bg-red-500 md:absolute md:right-0 h-screen md:w-[calc(100vw-260px)]">
+      <div className="flex flex-col bg-red-500 md:absolute md:right-0 h-screen md:w-[calc(100vw-240px)]">
         <NavBar />
         <div className="mt-35 md:mt-20 bg-yellow-200">
           <Outlet />
