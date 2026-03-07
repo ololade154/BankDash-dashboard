@@ -15,7 +15,7 @@ export const SideBar = () => {
 
   const features = [
     { name: 'Dashboard', icon: <House />, path: '/' },
-    { name: 'Transaction', icon: <TransactionIcon />, path: '/details' },
+    { name: 'Transaction', icon: <TransactionIcon />, path: '/transactions' },
     { name: 'Accounts', icon: <UserIcon />, path: '/accounts' },
     { name: 'Investments', icon: <InvestmentIcon />, path: '/investments' },
     { name: 'Credit Card', icon: <CreditIcon />, path: '/credit-card' },

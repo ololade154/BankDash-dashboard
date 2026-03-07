@@ -8,7 +8,7 @@ export const TransactionIcon = ({ className }) => {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <g clip-path="url(#clip0_147_48)">
+      <g clipPath="url(#clip0_147_48)">
         <path
           d="M4.16663 18.3334C4.16715 18.7753 4.34291 19.1989 4.65536 19.5113C4.96781 19.8238 5.39143 19.9996 5.83329 20.0001H14.1666C14.6085 19.9996 15.0321 19.8238 15.3446 19.5113C15.657 19.1989 15.8328 18.7753 15.8333 18.3334V17.6042H4.16663V18.3334Z"
           fill="currentColor"
