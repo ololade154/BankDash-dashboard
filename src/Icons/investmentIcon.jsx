@@ -8,7 +8,7 @@ export const InvestmentIcon = ({ className }) => {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <g clip-path="url(#clip0_147_37)">
+      <g clipPath="url(#clip0_147_37)">
         <path
           d="M3.1366 8.18164H0.909362C0.407234 8.18164 0 8.58888 0 9.091V19.091C0 19.5927 0.407234 19.9999 0.909362 19.9999H3.1366C3.63872 19.9999 4.04553 19.5927 4.04553 19.091V9.091C4.04553 8.58888 3.63872 8.18164 3.1366 8.18164Z"
           fill="currentColor"
