@@ -11,7 +11,7 @@ import { SettingsIcon } from '../Icons/settingsIcon.jsx';
 import { PriviledgeIcon } from '../Icons/priviledgeIcon.jsx';
 import { X } from 'lucide-react';
 
-export const MobileMenu = () => {
+export const MobileMenu = ({ toggle, setToggle }) => {
   const [active, setActive] = useState('Dashboard');
   const features = [
     { name: 'Dashboard', icon: <House />, path: '/' },
@@ -26,10 +26,15 @@ export const MobileMenu = () => {
   ];
 
   return (
-    <div className="hidden  flex-col gap-y-6 bg-white w-50 h-screen p-4 fixed top-0 left-0 z-20 ">
+    <div
+      className={`md:hidden flex flex-col gap-y-6 bg-white w-60 h-screen p-4 fixed top-0 left-0 z-20 transition-transform duration-300
+      ${toggle ? 'translate-x-0' : '-translate-x-full'}`}
+    >
       {/* Close Icon */}
       <div className="flex justify-end ">
-        <X size={24} color="#343C6A" />
+        <button onClick={() => setToggle(false)}>
+          <X size={36} color="#b1b1b1" />
+        </button>
       </div>
 
       {/* Logo */}
