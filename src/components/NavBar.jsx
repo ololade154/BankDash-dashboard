@@ -1,16 +1,18 @@
 import { Menu } from 'lucide-react';
+import { useState } from 'react';
 import { NavImage } from './NavImage';
 import { useLocation } from 'react-router';
 import { SearchBar } from './searchBar';
 import { SettingIcon } from '../Icons/settingIcon';
 import { NotificationIcon } from '../Icons/notificationIcon';
-// import { MobileMenu } from './mobileMenu';
+import { MobileMenu } from './mobileMenu';
 
 export const NavBar = () => {
   const location = useLocation();
+  const [toggle, setToggle] = useState(false);
 
   const routeTitles = {
-    '/': 'OverView',
+    '/': 'Overview',
     '/transactions': 'Transactions',
     '/accounts': 'Accounts',
     '/investments': 'Investments',
@@ -25,16 +27,18 @@ export const NavBar = () => {
       {/* Mobile Navbar */}
       <div className="bg-white h-35 fixed w-full z-10 flex flex-col py-4 px-6 gap-y-4 right-0 left-0 md:hidden">
         <div className="flex justify-between items-center ">
-          <Menu color="#343C6A" height={36} width={36} strokeWidth={1.5} />
+          <button onClick={() => setToggle(!toggle)}>
+            <Menu color="#343C6A" height={36} width={36} strokeWidth={1.5} />
+          </button>
           <div>{title}</div>
           <NavImage src="/nav-image.svg" className="w-12 h-12" />
         </div>
         <SearchBar />
-        {/* <MobileMenu /> */}
+        <MobileMenu toggle={toggle} setToggle={setToggle} />
       </div>
 
       {/* Desktop Navbar */}
-      <div className="hidden md:flex bg-white w-[calc(100vw-240px)] h-20 fixed z-10 top-0 justify-between items-center py-6 px-12">
+      <div className="hidden md:flex bg-white w-[calc(100vw-240px)] h-20 fixed z-10 top-0 justify-between items-center py-6 px-12 border-b border-[#E6EFF5]">
         <h1 className="font-semibold text-[25px] inter-font nav-font-color">
           {title}
         </h1>

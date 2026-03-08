@@ -26,7 +26,7 @@ export const SideBar = () => {
   ];
 
   return (
-    <div className="hidden md:flex flex-col gap-y-10  bg-white md:fixed md:w-60 md:left-0 md:h-screen md:py-6 md:px-8">
+    <div className="hidden md:flex flex-col gap-y-10  bg-white md:fixed md:w-60 md:left-0 md:h-screen md:py-6 md:px-8 border-r border-[#E6EFF5]">
       {/* Logo */}
       <div>
         <img src="src/Images/Logo.svg" alt="logo" className="w-50" />
