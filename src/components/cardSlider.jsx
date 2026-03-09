@@ -3,9 +3,38 @@ import 'swiper/css';
 import { Card } from './card';
 
 const cards = [
-  { id: 1, title: 'Balance', amount: '$2000', bgColor: 'bg-blue-500' },
-  { id: 2, title: 'Savings', amount: '$1500', bgColor: 'bg-green-500' },
-  { id: 3, title: 'Investment', amount: '$5000', bgColor: 'bg-purple-500' },
+  {
+    id: 1,
+    title: 'Balance',
+    amount: '$2000',
+    bgColor: 'bg-[linear-gradient(107.38deg,#4C49ED_2.61%,#0A06F4_101.2%)]',
+    gradientBottom: true,
+    borderTop: false,
+    border: false,
+    cardColor: 'colored',
+  },
+  {
+    id: 2,
+    title: 'Balance',
+    amount: '$1500',
+    bgColor: 'bg-white',
+    gradientBottom: false,
+    borderTop: true,
+    border: true,
+    chipColor: 'text-gray-400',
+    cardColor: 'white',
+  },
+  {
+    id: 3,
+    title: 'Balance',
+    amount: '$5000',
+    bgColor: 'bg-[linear-gradient(107.38deg,#2D60FF_2.61%,#539BFF_101.2%)]',
+    gradientBottom: true,
+    borderTop: false,
+    border: false,
+    chipColor: 'text-yellow-400',
+    cardColor: 'colored',
+  },
 ];
 
 export const CardSlider = () => {
@@ -25,6 +54,10 @@ export const CardSlider = () => {
               title={card.title}
               amount={card.amount}
               bgColor={card.bgColor}
+              gradientBottom={card.gradientBottom}
+              borderTop={card.borderTop}
+              border={card.border}
+              cardColor={card.cardColor}
             />
           </SwiperSlide>
         ))}
