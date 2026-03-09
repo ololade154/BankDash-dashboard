@@ -3,7 +3,7 @@ import { Transaction } from './transaction';
 export const HomePage = () => {
   return (
     <div>
-      <div className="flex flex-col gap-y-3 md:flex-row md:gap-x-8 md:items-center">
+      <div className="flex flex-col gap-y-6 md:flex-row md:gap-x-8 md:items-center">
         <div className="min-w-0 md:flex-2 ">
           <div className="flex justify-between">
             <div>Hello</div>
