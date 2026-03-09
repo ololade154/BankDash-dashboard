@@ -1,7 +1,7 @@
-export const Card = ({ title, amount, bgColor }) => {
+export const Transaction = ({ title, amount }) => {
   return (
     <div
-      className={`${bgColor} p-4  w-full h-40`}
+      className="bg-white p-4 rounded-2xl w-full h-40 "
       style={{ borderRadius: '20px' }}
     >
       <h3 className="text-sm text-gray-500">{title}</h3>

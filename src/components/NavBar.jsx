@@ -25,7 +25,7 @@ export const NavBar = () => {
   return (
     <>
       {/* Mobile Navbar */}
-      <div className="bg-white h-35 fixed w-full z-10 flex flex-col py-4 px-6 gap-y-4 right-0 left-0 md:hidden">
+      <div className="bg-white h-36 fixed w-full z-10 flex flex-col py-4 px-6 gap-y-4 right-0 left-0 md:hidden">
         <div className="flex justify-between items-center ">
           <button onClick={() => setToggle(!toggle)}>
             <Menu color="#343C6A" height={36} width={36} strokeWidth={1.5} />
