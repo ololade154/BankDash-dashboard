@@ -6,34 +6,40 @@ const cards = [
   {
     id: 1,
     title: 'Balance',
-    amount: '$2000',
+    amount: '$5,756',
     bgColor: 'bg-[linear-gradient(107.38deg,#4C49ED_2.61%,#0A06F4_101.2%)]',
     gradientBottom: true,
     borderTop: false,
     border: false,
     cardColor: 'colored',
+    cardTag: 'hash',
+    textColor: true,
   },
   {
     id: 2,
     title: 'Balance',
-    amount: '$1500',
+    amount: '$5,756',
     bgColor: 'bg-white',
     gradientBottom: false,
     borderTop: true,
     border: true,
     chipColor: 'text-gray-400',
     cardColor: 'white',
+    cardTag: 'deephash',
+    textColor: false,
   },
   {
     id: 3,
     title: 'Balance',
-    amount: '$5000',
+    amount: '$5,756',
     bgColor: 'bg-[linear-gradient(107.38deg,#2D60FF_2.61%,#539BFF_101.2%)]',
     gradientBottom: true,
     borderTop: false,
     border: false,
     chipColor: 'text-yellow-400',
     cardColor: 'colored',
+    cardTag: 'hash',
+    textColor: true,
   },
 ];
 
@@ -58,6 +64,8 @@ export const CardSlider = () => {
               borderTop={card.borderTop}
               border={card.border}
               cardColor={card.cardColor}
+              cardTag={card.cardTag}
+              textColor={card.textColor}
             />
           </SwiperSlide>
         ))}
