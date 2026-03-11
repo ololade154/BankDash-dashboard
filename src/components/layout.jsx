@@ -8,7 +8,7 @@ export const Layout = () => {
       <SideBar />
       <div className="flex flex-col layout-color md:absolute md:right-0 h-screen w-full md:w-[calc(100vw-240px)]">
         <NavBar />
-        <div className="mt-36 md:mt-20 md:py-11 md:px-8 px-6 py-4">
+        <div className="mt-36 md:mt-20 md:py-7 md:px-8 px-6 py-6 ">
           <Outlet />
         </div>
       </div>

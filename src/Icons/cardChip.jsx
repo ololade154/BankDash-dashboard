@@ -1,14 +1,14 @@
 export const CardChipWhite = () => {
   return (
     <svg
-      width="29"
-      height="29"
-      viewBox="0 0 29 29"
+      width="34"
+      height="34"
+      viewBox="0 0 34 34"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
-      <rect width="29" height="29" fill="url(#pattern0_147_156)" />
+      <rect width="34" height="34" fill="url(#pattern0_147_156)" />
       <defs>
         <pattern
           id="pattern0_147_156"
@@ -32,14 +32,14 @@ export const CardChipWhite = () => {
 export const CardChipBlack = () => {
   return (
     <svg
-      width="29"
-      height="29"
-      viewBox="0 0 29 29"
+      width="34"
+      height="34"
+      viewBox="0 0 34 34"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
-      <rect width="29" height="29" fill="url(#pattern0_147_205)" />
+      <rect width="34" height="34" fill="url(#pattern0_147_205)" />
       <defs>
         <pattern
           id="pattern0_147_205"
