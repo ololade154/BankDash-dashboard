@@ -27,20 +27,20 @@ export const MobileMenu = ({ toggle, setToggle }) => {
 
   return (
     <div
-      className={`md:hidden flex flex-col gap-y-6 bg-white w-52 h-screen p-4 fixed top-0 left-0 z-20 transition-transform duration-300
+      className={`md:hidden flex flex-col gap-y-6 bg-white w-60 h-screen px-4 py-10 fixed top-0 left-0 z-20 transition-transform duration-300
       ${toggle ? 'translate-x-0' : '-translate-x-full'}`}
     >
       {/* Close Icon */}
-      <div className="flex justify-end ">
+      <div className="flex justify-between items-center">
+        <img src="/Logo.svg" alt="logo" className="w-40 mx-auto" />
         <button onClick={() => setToggle(false)}>
-          <X size={36} color="#b1b1b1" />
+          <X size={32} color="#b1b1b1" />
         </button>
       </div>
 
       {/* Logo */}
-      <div className="mb-2">
-        <img src="/Logo.svg" alt="logo" className="w-40 mx-auto" />
-      </div>
+      {/* <div className="mb-2">
+      </div> */}
 
       {/* Features */}
       <div className="flex flex-col gap-y-4">
