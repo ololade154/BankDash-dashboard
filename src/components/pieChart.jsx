@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
 
 // Sample data
@@ -61,6 +62,7 @@ const MyCustomPie = (props) => {
 };
 
 export default function MyPieChart() {
+  const [activeIndex, setActiveIndex] = useState(null);
   return (
     <>
       <div className="w-full bg-white rounded-xl p-4 focus:outline-none">
@@ -76,8 +78,7 @@ export default function MyPieChart() {
                 shape={MyCustomPie}
                 paddingAngle={5}
                 outerRadius="70%"
-                onClick={null}
-                isAnimationActive={false}
+                activeIndex={activeIndex}
               />
             </PieChart>
           </ResponsiveContainer>
