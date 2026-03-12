@@ -26,10 +26,10 @@ export const SideBar = () => {
   ];
 
   return (
-    <div className="hidden md:flex flex-col gap-y-10  bg-white md:fixed md:w-60 md:left-0 md:h-screen md:py-6 md:px-8 border-r border-[#E6EFF5]">
+    <div className="hidden md:flex flex-col gap-y-10  bg-white md:fixed md:w-70 md:left-0 md:h-screen md:py-6 md:px-8 border-r border-[#E6EFF5]">
       {/* Logo */}
       <div>
-        <img src="src/Images/Logo.svg" alt="logo" className="w-50" />
+        <img src="/public/Logo.svg" alt="logo" className=" md:max-w-full" />
       </div>
 
       {/* Features */}
@@ -39,7 +39,7 @@ export const SideBar = () => {
             key={feature.name}
             to={feature.path}
             onClick={() => setActive(feature.name)}
-            className="relative flex items-center inter-font cursor-pointer"
+            className="relative flex items-center inter-font  cursor-pointer"
           >
             {/* feature line */}
             <div
@@ -53,7 +53,7 @@ export const SideBar = () => {
                 `}
             >
               {feature.icon}
-              <span className="text-[18px] font-medium">{feature.name}</span>
+              <span className="text-[16px] font-medium">{feature.name}</span>
             </div>
           </NavLink>
         ))}

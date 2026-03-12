@@ -13,7 +13,7 @@ export const Card = ({
 }) => {
   return (
     <div
-      className={`${bgColor} p-6 lato-font w-full flex flex-col gap-y-4  ${border ? 'card-border' : ''} 
+      className={`${bgColor} p-6 lato-font max-w-full flex flex-col gap-y-4  ${border ? 'card-border' : ''} 
       ${textColor ? 'text-white' : 'card-text-three'}`}
       style={{ borderRadius: '20px' }}
     >
