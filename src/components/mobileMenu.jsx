@@ -32,10 +32,10 @@ export const MobileMenu = ({ toggle, setToggle }) => {
     >
       {/* Close Icon */}
       <div className="flex justify-between items-center">
+        <img src="/Logo.svg" alt="logo" className="w-40 mx-auto" />
         <button onClick={() => setToggle(false)}>
           <X size={32} color="#b1b1b1" />
         </button>
-        <img src="/Logo.svg" alt="logo" className="w-40 mx-auto" />
       </div>
 
       {/* Logo */}
