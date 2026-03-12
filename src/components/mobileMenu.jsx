@@ -27,7 +27,7 @@ export const MobileMenu = ({ toggle, setToggle }) => {
 
   return (
     <div
-      className={`md:hidden flex flex-col gap-y-6 bg-white w-60 h-screen p-4 fixed top-0 left-0 z-20 transition-transform duration-300
+      className={`md:hidden flex flex-col gap-y-6 bg-white w-52 h-screen p-4 fixed top-0 left-0 z-20 transition-transform duration-300
       ${toggle ? 'translate-x-0' : '-translate-x-full'}`}
     >
       {/* Close Icon */}
@@ -39,7 +39,7 @@ export const MobileMenu = ({ toggle, setToggle }) => {
 
       {/* Logo */}
       <div className="mb-2">
-        <img src="/public/Logo.svg" alt="logo" className="w-40 mx-auto" />
+        <img src="/Logo.svg" alt="logo" className="w-40 mx-auto" />
       </div>
 
       {/* Features */}
