@@ -48,3 +48,14 @@
 .main-color {
   color: #343c6a;
 }
+
+.bar-text-color {
+  color: #718ebf;
+}
+.recharts-wrapper:focus,
+.recharts-wrapper:focus-visible,
+.recharts-surface:focus,
+.recharts-surface:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
