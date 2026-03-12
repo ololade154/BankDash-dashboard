@@ -39,7 +39,7 @@ export const MobileMenu = ({ toggle, setToggle }) => {
 
       {/* Logo */}
       <div className="mb-2">
-        <img src="/public/Logo.svg" alt="logo" className="w-40 mx-auto" />
+        <img src="/Logo.svg" alt="logo" className="w-40 mx-auto" />
       </div>
 
       {/* Features */}

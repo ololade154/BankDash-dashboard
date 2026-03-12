@@ -29,7 +29,7 @@ export const SideBar = () => {
     <div className="hidden md:flex flex-col gap-y-10  bg-white md:fixed md:w-70 md:left-0 md:h-screen md:py-6 md:px-8 border-r border-[#E6EFF5]">
       {/* Logo */}
       <div>
-        <img src="/public/Logo.svg" alt="logo" className=" md:max-w-full" />
+        <img src="/Logo.svg" alt="logo" className=" md:max-w-full" />
       </div>
 
       {/* Features */}
