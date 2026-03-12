@@ -7,7 +7,7 @@ export const SearchBar = () => {
       <input
         type="text"
         placeholder="Search for something"
-        className="w-full bg-transparent outline-none text-[12px] placeholder:text-[#8BA3CB] input-color placeholder:text-[12px]"
+        className="w-full bg-transparent outline-none text-[16px] md:text-[12px] placeholder:text-[#8BA3CB] input-color placeholder:text-[12px]"
       />
     </div>
   );

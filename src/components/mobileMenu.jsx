@@ -39,7 +39,7 @@ export const MobileMenu = ({ toggle, setToggle }) => {
 
       {/* Logo */}
       <div className="mb-2">
-        <img src="src/Images/Logo.svg" alt="logo" className="w-40 mx-auto" />
+        <img src="/public/Logo.svg" alt="logo" className="w-40 mx-auto" />
       </div>
 
       {/* Features */}
@@ -48,7 +48,10 @@ export const MobileMenu = ({ toggle, setToggle }) => {
           <NavLink
             key={feature.name}
             to={feature.path}
-            onClick={() => setActive(feature.name)}
+            onClick={() => {
+              setActive(feature.name);
+              setToggle(false);
+            }}
             className="relative flex items-center gap-x-4 px-3 py-2 rounded-md hover:bg-gray-100"
           >
             {/* Active line indicator */}
