@@ -55,7 +55,7 @@ export const CardSlider = () => {
         style={{ width: '100%' }}
       >
         {cards.map((card) => (
-          <SwiperSlide key={card.id} className="flex justify-center">
+          <SwiperSlide key={card.id} className="flex justify-center ">
             <Card
               title={card.title}
               amount={card.amount}
