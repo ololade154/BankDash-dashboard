@@ -38,7 +38,7 @@ export const NavBar = () => {
       </div>
 
       {/* Desktop Navbar */}
-      <div className="hidden md:flex bg-white w-[calc(100vw-240px)] h-20 fixed z-10 top-0 justify-between items-center py-6 px-12 border-b border-[#E6EFF5]">
+      <div className="hidden md:flex bg-white w-[calc(100vw-270px)] h-20 fixed z-10 top-0 justify-between items-center py-6 px-12 border-b border-[#E6EFF5]">
         <h1 className="font-semibold text-[25px] inter-font nav-font-color">
           {title}
         </h1>

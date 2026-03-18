@@ -44,10 +44,9 @@ export const HomePage = () => {
       </div>
       <div className="flex flex-col mt-4  gap-y-4 md:flex-row md:gap-x-8 md:items-center md:mt-6">
         <div className="min-w-0 md:flex-1  ">
-          <div className="flex justify-between mb-4 md:mb-5 main-color font-semibold inter-font">
+          <div className="flex justify-between mb-4 md:mb-5 main-color font-semibold inter-font h-250px ">
             <h1 className="text-[18px] ">Weekly Activity</h1>
           </div>
-          {/* <MyBarChart /> */}
         </div>
         <div className="min-w-0 md:flex-2">
           <div className="md:mb-5 mb-4 main-color font-semibold inter-font text-[18px]">
