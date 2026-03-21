@@ -53,7 +53,7 @@ export const SideBar = () => {
                 `}
             >
               {feature.icon}
-              <span className="text-[16px] font-medium">{feature.name}</span>
+              <span className="text-[15px] font-medium">{feature.name}</span>
             </div>
           </NavLink>
         ))}

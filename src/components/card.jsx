@@ -13,7 +13,7 @@ export const Card = ({
 }) => {
   return (
     <div
-      className={`${bgColor} p-6 lato-font md:max-w-80 flex flex-col gap-y-4  ${border ? 'card-border' : ''} 
+      className={`${bgColor} p-6 lato-font w-full h-50 gap-y-4 flex flex-col  justify-between ${border ? 'card-border' : ''} 
       ${textColor ? 'text-white' : 'card-text-three'}`}
       style={{ borderRadius: '20px' }}
     >
@@ -29,22 +29,22 @@ export const Card = ({
         {cardColor === 'colored' && <CardChipWhite />}
         {cardColor === 'white' && <CardChipBlack />}
       </div>
-      <div className="flex items-center gap-28">
+      <div className="flex items-center justify-between">
         <div>
           <p
             className={`${textColor ? 'card-text-one' : 'card-text-two'} text-[10px] font-normal`}
           >
             CARD HOLDER
           </p>
-          <span className=" text-[16px]  font-semibold">Eddy Cusuma</span>
+          <span className=" text-[12px]  font-semibold">Eddy Cusuma</span>
         </div>
-        <div>
+        <div className='flex flex-col'>
           <p
             className={`${textColor ? 'card-text-one' : 'card-text-two'} text-[10px] font-normal`}
           >
             VALID THRU
           </p>
-          <span className=" text-[16px]  font-semibold">12/22</span>
+          <span className="self-end text-[16px]  font-semibold">12/22</span>
         </div>
       </div>
       <div

@@ -50,12 +50,11 @@ export const CardSlider = () => {
         spaceBetween={20}
         breakpoints={{
           0: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
+          768: { slidesPerView: '2' },
         }}
-        style={{ width: '100%' }}
       >
         {cards.map((card) => (
-          <SwiperSlide key={card.id} className="flex justify-center ">
+          <SwiperSlide style={{width: "140px"}} key={card.id} className="flex justify-center ">
             <Card
               title={card.title}
               amount={card.amount}
