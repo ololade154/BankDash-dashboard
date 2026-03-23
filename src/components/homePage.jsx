@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 export const HomePage = () => {
   return (
     <div>
-      <div className="flex flex-col gap-y-6 md:flex-row justify-between md:items-start">
+      <div className="flex flex-col gap-y-6 md:flex-row justify-between md:gap-x-8 md:items-start">
         <div className="min-w-0 md:grow-0 md:basis-185">
           <div className="flex justify-between md:mb-5 mb-3 main-color font-semibold inter-font">
             <div>
