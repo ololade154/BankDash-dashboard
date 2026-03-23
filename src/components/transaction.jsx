@@ -34,7 +34,7 @@ export const Transaction = () => {
   ];
 
   return (
-    <div className="bg-white p-6 rounded-2xl w-full flex flex-col gap-y-3 inter-font">
+    <div className="bg-white p-6 rounded-2xl w-full h-50 flex flex-col gap-y-3 inter-font">
       {transValue.map((value) => {
         return (
           <div key={value.id} className="flex items-center justify-between">
