@@ -24,7 +24,7 @@ export const TransactionPage = () => {
           <ExpenseChart />
         </div>
       </div>
-      <div className="mt-4 ">
+      <div className="mt-8 ">
         <Table />
       </div>
     </div>

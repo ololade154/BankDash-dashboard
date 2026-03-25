@@ -1,44 +1,88 @@
+import { useState } from 'react';
 import { transactionValue } from './transactionValue';
 import { ExpenseIcon } from '../Icons/expenseIcon';
 import { IncomeIcon } from '../Icons/incomeIcon';
+import { LeftArrow } from '../Icons/leftArrow';
+import { RightArrow } from '../Icons/rightArrow';
 
 export const Table = () => {
+  const [activeTab, setActiveTab] = useState('all');
+
+  const filteredTransactions =
+    activeTab === 'all'
+      ? transactionValue
+      : transactionValue.filter((item) => item.transactionType === activeTab);
+
   return (
     <>
-      {/* desktop table */}
-      <div className=" ">
-        <div className="hidden md:block  bg-white px-6 py-4 pt-0 rounded-2xl">
-          <table className="w-full ">
+      <div>
+        {/* Title */}
+        <h1 className="mb-4 md:mb-6 text-[#343C6A] text-[16px] md:text-[18px] font-semibold">
+          Recent Transaction
+        </h1>
+
+        {/* Tabs */}
+        <div className="flex flex-wrap items-center gap-x-6 md:gap-x-20 border-b border-[#EBEEF2] mb-6 text-[#718EBF] text-[14px] md:text-[15px] font-medium">
+          <p
+            onClick={() => setActiveTab('all')}
+            className={`cursor-pointer py-3 rounded-tl-[10px] rounded-tr-[10px] ${
+              activeTab === 'all'
+                ? 'text-[#1814F3] border-b-[3px] border-[#1814F3]'
+                : ''
+            }`}
+          >
+            All Transactions
+          </p>
+
+          <p
+            onClick={() => setActiveTab('income')}
+            className={`cursor-pointer py-3 rounded-tl-[10px] rounded-tr-[10px] ${
+              activeTab === 'income'
+                ? 'text-[#1814F3] border-b-[3px] border-[#1814F3]'
+                : ''
+            }`}
+          >
+            Income
+          </p>
+
+          <p
+            onClick={() => setActiveTab('expense')}
+            className={`cursor-pointer py-3 rounded-tl-[10px] rounded-tr-[10px] ${
+              activeTab === 'expense'
+                ? 'text-[#1814F3] border-b-[3px] border-[#1814F3]'
+                : ''
+            }`}
+          >
+            Expenses
+          </p>
+        </div>
+
+        {/* Desktop Table */}
+        <div className="hidden md:block bg-white px-6 py-4 pt-0 rounded-2xl">
+          <table className="w-full">
             <thead>
-              <tr className="border-b">
-                <th className="py-4 px-4 text-md text-left first:pl-0 last:pr-0">
+              <tr className="border-b border-[#e6eff5] text-[#718EBF] text-[15px]">
+                <th className="py-4 px-4 text-left first:pl-0 last:pr-0 font-medium">
                   Description
                 </th>
-                <th className="py-4 px-4 text-md text-left first:pl-0 last:pr-0">
+                <th className="py-4 px-4 text-left font-medium">
                   Transaction ID
                 </th>
-                <th className="py-4 px-4 text-md text-left first:pl-0 last:pr-0">
-                  Type
-                </th>
-                <th className="py-4 px-4 text-md text-left first:pl-0 last:pr-0">
-                  Card
-                </th>
-                <th className="py-4 px-4 text-md text-left first:pl-0 last:pr-0">
-                  Date
-                </th>
-                <th className="py-4 px-4 text-md text-left first:pl-0 last:pr-0">
-                  Amount
-                </th>
-                <th className="py-4 px-4 text-md text-left first:pl-0 last:pr-0">
-                  Receipt
-                </th>
+                <th className="py-4 px-4 text-left font-medium">Type</th>
+                <th className="py-4 px-4 text-left font-medium">Card</th>
+                <th className="py-4 px-4 text-left font-medium">Date</th>
+                <th className="py-4 px-4 text-left font-medium">Amount</th>
+                <th className="py-4 px-4 text-left font-medium">Receipt</th>
               </tr>
             </thead>
 
             <tbody>
-              {transactionValue.map((value) => (
-                <tr key={value.id} className="border-b last:border-b-0">
-                  <td className="py-4 px-4 text-md first:pl-0 last:pr-0">
+              {filteredTransactions.map((value) => (
+                <tr
+                  key={value.id}
+                  className="border-b border-[#e6eff5] last:border-b-0 text-[#232323] text-[14px]"
+                >
+                  <td className="py-4 px-4 first:pl-0 font-normal">
                     <div className="flex items-start gap-4">
                       {value.transactionType === 'income' ? (
                         <IncomeIcon />
@@ -49,35 +93,41 @@ export const Table = () => {
                     </div>
                   </td>
 
-                  <td className="py-4 px-4 text-md text-left first:pl-0 last:pr-0">
+                  <td className="py-4 px-4 font-normal">
                     {value.transactionID}
                   </td>
-                  <td className="py-4 px-4 text-md text-left first:pl-0 last:pr-0">
-                    {value.type}
-                  </td>
-                  <td className="py-4 px-4 text-md text-left first:pl-0 last:pr-0">
-                    {value.card}
-                  </td>
-                  <td className="py-4 px-4 text-md text-left first:pl-0 last:pr-0">
-                    {value.Date}
-                  </td>
+
+                  <td className="py-4 px-4 font-normal">{value.type}</td>
+
+                  <td className="py-4 px-4 font-normal">{value.card}</td>
+
+                  <td className="py-4 px-4 font-normal">{value.Date}</td>
+
                   <td
-                    className={`py-4 px-4 text-md text-left first:pl-0 last:pr-0 ${
+                    className={`py-4 px-4 font-normal ${
                       value.amount.startsWith('+')
-                        ? 'text-green-500'
-                        : 'text-red-500'
-                    }
-                  `}
+                        ? 'text-[#16DBAA]'
+                        : 'text-[#FE5C73]'
+                    }`}
                   >
                     {value.amount}
                   </td>
-                  <td className="py-4 px-4 text-md text-left first:pl-0 last:pr-0">
-                    {value.download}
+
+                  <td className="py-4 px-4 text-[#123288] font-normal">
+                    <span className="py-2 px-4 button-border rounded-full">
+                      {value.download}
+                    </span>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* Pagination Arrows */}
+        <div className="flex justify-end gap-4 mt-4">
+          <LeftArrow />
+          <RightArrow />
         </div>
       </div>
     </>
