@@ -1,5 +1,6 @@
 import { CardSlider } from './cardSlider';
 import { ExpenseChart } from './expenseChart';
+import { Table } from './table';
 
 export const TransactionPage = () => {
   return (
@@ -22,6 +23,9 @@ export const TransactionPage = () => {
           </div>
           <ExpenseChart />
         </div>
+      </div>
+      <div className="mt-4 ">
+        <Table />
       </div>
     </div>
   );
