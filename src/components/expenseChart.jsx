@@ -32,7 +32,7 @@ export const ExpenseChart = () => {
 
   return (
     <div
-      className="p-6 lato-font md:max-w-80 h-50 bg-white"
+      className="p-6 lato-font w-full h-50 bg-white"
       style={{ borderRadius: '20px' }}
     >
       <ResponsiveContainer width="100%" height="100%">
