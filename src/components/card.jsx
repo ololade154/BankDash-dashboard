@@ -13,7 +13,7 @@ export const Card = ({
 }) => {
   return (
     <div
-      className={`${bgColor} p-6 lato-font w-full h-50 gap-y-4 flex flex-col  justify-between ${border ? 'card-border' : ''} 
+      className={`${bgColor} p-6 lato-font w-full max-w-full h-50 gap-y-4 flex flex-col  justify-between ${border ? 'card-border' : ''} 
       ${textColor ? 'text-white' : 'card-text-three'}`}
       style={{ borderRadius: '20px' }}
     >
@@ -56,7 +56,7 @@ export const Card = ({
             : ''
         } flex justify-between items-center`}
       >
-        <p className="md:text-[15px] text-[17px] font-semibold">
+        <p className="md:text-[15px] text-[13px] font-semibold">
           3778 **** **** 1234
         </p>
         <div>

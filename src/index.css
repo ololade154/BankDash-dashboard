@@ -57,17 +57,16 @@
 .bar-text-color {
   color: #718ebf;
 }
-.recharts-wrapper:focus,
-.recharts-wrapper:focus-visible,
-.recharts-surface:focus,
-.recharts-surface:focus-visible {
-  outline: none;
-  box-shadow: none;
-}
+
 .border-bottom {
   border-bottom: 1px solid #e6eff5;
 }
 
 .button-border {
   border: 1px solid #123288;
+}
+.recharts-wrapper *:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }

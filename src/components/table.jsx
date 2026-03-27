@@ -29,7 +29,7 @@ export const Table = () => {
         </h1>
 
         {/* Tabs */}
-        <div className="flex flex-wrap items-center mb-5 gap-x-12 md:gap-x-20 border-b border-[#EBEEF2] md:mb-6 text-[#718EBF] text-[14px] md:text-[15px] font-medium">
+        <div className="flex flex-wrap items-center mb-5 gap-x-6 md:gap-x-20 border-b border-[#EBEEF2] md:mb-6 text-[#718EBF] text-[14px] md:text-[15px] font-medium">
           <p
             onClick={() => {
               setActiveTab('all');
@@ -89,7 +89,7 @@ export const Table = () => {
                     <ExpenseIcon width={32} height={32} />
                   )}
                 </span>
-                <div className="flex flex-col gap-y-0.5 text-[#232323] text-[14px]">
+                <div className="flex flex-col gap-y-0.5 text-[#232323] text-[14px] min-w-0">
                   <span className="font-medium">{value.description}</span>
                   <span className="text-[#718EBF] font-normal">
                     {value.Date}
@@ -110,7 +110,7 @@ export const Table = () => {
           ))}
         </div>
         {/* desktop table */}
-        <div className="hidden md:block bg-white px-6 py-4 pt-0 rounded-2xl">
+        <div className="hidden md:block bg-white px-6 py-4 pt-0 rounded-2xl overflow-x-hidden">
           <table className="w-full">
             <thead>
               <tr className="border-b border-[#e6eff5] text-[#718EBF] text-[15px]">

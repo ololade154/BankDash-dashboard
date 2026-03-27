@@ -45,16 +45,17 @@ const cards = [
 
 export const CardSlider = () => {
   return (
-    <div>
+    <div className="w-full " style={{ overflow: 'hidden' }}>
       <Swiper
         spaceBetween={20}
+         style={{ width: '100%' }}
         breakpoints={{
           0: { slidesPerView: 1 },
-          768: { slidesPerView: '2' },
+          768: { slidesPerView: 2 },
         }}
       >
         {cards.map((card) => (
-          <SwiperSlide style={{width: "140px"}} key={card.id} className="flex justify-center ">
+          <SwiperSlide key={card.id} className="flex justify-center ">
             <Card
               title={card.title}
               amount={card.amount}
