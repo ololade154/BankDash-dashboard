@@ -17,12 +17,12 @@ export const Table = () => {
     <>
       <div>
         {/* Title */}
-        <h1 className="mb-4 md:mb-6 text-[#343C6A] text-[16px] md:text-[18px] font-semibold">
+        <h1 className="mb-2 md:mb-6 text-[#343C6A] text-[16px] md:text-[18px] font-semibold">
           Recent Transaction
         </h1>
 
         {/* Tabs */}
-        <div className="flex flex-wrap items-center gap-x-6 md:gap-x-20 border-b border-[#EBEEF2] mb-6 text-[#718EBF] text-[14px] md:text-[15px] font-medium">
+        <div className="flex flex-wrap items-center mb-5 gap-x-12 md:gap-x-20 border-b border-[#EBEEF2] md:mb-6 text-[#718EBF] text-[14px] md:text-[15px] font-medium">
           <p
             onClick={() => setActiveTab('all')}
             className={`cursor-pointer py-3 rounded-tl-[10px] rounded-tr-[10px] ${
@@ -57,7 +57,45 @@ export const Table = () => {
           </p>
         </div>
 
-        {/* Desktop Table */}
+        {/* mobile Table */}
+        <div className="block md:hidden bg-white px-4 py-3 pt-0 rounded-2xl ">
+          <table className="w-full">
+            <tbody>
+              {filteredTransactions.map((value) => (
+                <tr
+                  key={value.id}
+                  className="border-b border-[#e6eff5] last:border-b-0 text-[#232323] text-[14px]"
+                >
+                  <td className="py-3 px-2 first:pl-0 font-medium">
+                    <div className="flex items-center gap-2.5">
+                      <span className="shrink-0">
+                        {value.transactionType === 'income' ? (
+                          <IncomeIcon width={35} height={35} />
+                        ) : (
+                          <ExpenseIcon width={35} height={35} />
+                        )}
+                      </span>
+                      <div className="flex flex-col gap-y-0.5">
+                        <span>{value.description}</span>
+                        <span className="text-[#718EBF] font-normal">{value.Date}</span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td
+                    className={`py-3 px-2 font-normal ${
+                      value.amount.startsWith('+')
+                        ? 'text-[#16DBAA]'
+                        : 'text-[#FE5C73]'
+                    }`}
+                  >
+                    {value.amount}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <div className="hidden md:block bg-white px-6 py-4 pt-0 rounded-2xl">
           <table className="w-full">
             <thead>
@@ -125,9 +163,19 @@ export const Table = () => {
         </div>
 
         {/* Pagination Arrows */}
-        <div className="flex justify-end gap-4 mt-4">
-          <LeftArrow />
-          <RightArrow />
+        <div className="flex justify-end items-center md:gap-6 mt-6 gap-5 text-[#1814F3]">
+          <div>
+            <LeftArrow />
+          </div>
+          <div>Previous</div>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>Next</div>
+          <div>
+            <RightArrow />
+          </div>
         </div>
       </div>
     </>
