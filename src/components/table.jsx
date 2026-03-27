@@ -2,16 +2,23 @@ import { useState } from 'react';
 import { transactionValue } from './transactionValue';
 import { ExpenseIcon } from '../Icons/expenseIcon';
 import { IncomeIcon } from '../Icons/incomeIcon';
-import { LeftArrow } from '../Icons/leftArrow';
-import { RightArrow } from '../Icons/rightArrow';
+import { Pagination } from './pagination';
 
 export const Table = () => {
   const [activeTab, setActiveTab] = useState('all');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
 
   const filteredTransactions =
     activeTab === 'all'
       ? transactionValue
       : transactionValue.filter((item) => item.transactionType === activeTab);
+
+  const totalPages = Math.ceil(filteredTransactions.length / itemsPerPage);
+  const currentData = filteredTransactions.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage,
+  );
 
   return (
     <>
@@ -24,7 +31,10 @@ export const Table = () => {
         {/* Tabs */}
         <div className="flex flex-wrap items-center mb-5 gap-x-12 md:gap-x-20 border-b border-[#EBEEF2] md:mb-6 text-[#718EBF] text-[14px] md:text-[15px] font-medium">
           <p
-            onClick={() => setActiveTab('all')}
+            onClick={() => {
+              setActiveTab('all');
+              setCurrentPage(1);
+            }}
             className={`cursor-pointer py-3 rounded-tl-[10px] rounded-tr-[10px] ${
               activeTab === 'all'
                 ? 'text-[#1814F3] border-b-[3px] border-[#1814F3]'
@@ -35,7 +45,10 @@ export const Table = () => {
           </p>
 
           <p
-            onClick={() => setActiveTab('income')}
+            onClick={() => {
+              setActiveTab('income');
+              setCurrentPage(1);
+            }}
             className={`cursor-pointer py-3 rounded-tl-[10px] rounded-tr-[10px] ${
               activeTab === 'income'
                 ? 'text-[#1814F3] border-b-[3px] border-[#1814F3]'
@@ -46,7 +59,10 @@ export const Table = () => {
           </p>
 
           <p
-            onClick={() => setActiveTab('expense')}
+            onClick={() => {
+              setActiveTab('expense');
+              setCurrentPage(1);
+            }}
             className={`cursor-pointer py-3 rounded-tl-[10px] rounded-tr-[10px] ${
               activeTab === 'expense'
                 ? 'text-[#1814F3] border-b-[3px] border-[#1814F3]'
@@ -58,44 +74,42 @@ export const Table = () => {
         </div>
 
         {/* mobile Table */}
-        <div className="block md:hidden bg-white px-4 py-3 pt-0 rounded-2xl ">
-          <table className="w-full">
-            <tbody>
-              {filteredTransactions.map((value) => (
-                <tr
-                  key={value.id}
-                  className="border-b border-[#e6eff5] last:border-b-0 text-[#232323] text-[14px]"
-                >
-                  <td className="py-3 px-2 first:pl-0 font-medium">
-                    <div className="flex items-center gap-2.5">
-                      <span className="shrink-0">
-                        {value.transactionType === 'income' ? (
-                          <IncomeIcon width={35} height={35} />
-                        ) : (
-                          <ExpenseIcon width={35} height={35} />
-                        )}
-                      </span>
-                      <div className="flex flex-col gap-y-0.5">
-                        <span>{value.description}</span>
-                        <span className="text-[#718EBF] font-normal">{value.Date}</span>
-                      </div>
-                    </div>
-                  </td>
 
-                  <td
-                    className={`py-3 px-2 font-normal ${
-                      value.amount.startsWith('+')
-                        ? 'text-[#16DBAA]'
-                        : 'text-[#FE5C73]'
-                    }`}
-                  >
-                    {value.amount}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="block md:hidden bg-white px-3 py-2 pt-0 rounded-2xl">
+          {currentData.map((value) => (
+            <div
+              key={value.id}
+              className="flex items-center justify-between border-b border-[#e6eff5] last:border-b-0 py-2  "
+            >
+              <div className="flex items-center gap-2.5">
+                <span className="shrink-0">
+                  {value.transactionType === 'income' ? (
+                    <IncomeIcon width={32} height={32} />
+                  ) : (
+                    <ExpenseIcon width={32} height={32} />
+                  )}
+                </span>
+                <div className="flex flex-col gap-y-0.5 text-[#232323] text-[14px]">
+                  <span className="font-medium">{value.description}</span>
+                  <span className="text-[#718EBF] font-normal">
+                    {value.Date}
+                  </span>
+                </div>
+              </div>
+
+              <span
+                className={`text-[14px] font-normal shrink-0 ${
+                  value.amount.startsWith('+')
+                    ? 'text-[#16DBAA]'
+                    : 'text-[#FE5C73]'
+                }`}
+              >
+                {value.amount}
+              </span>
+            </div>
+          ))}
         </div>
+        {/* desktop table */}
         <div className="hidden md:block bg-white px-6 py-4 pt-0 rounded-2xl">
           <table className="w-full">
             <thead>
@@ -115,7 +129,7 @@ export const Table = () => {
             </thead>
 
             <tbody>
-              {filteredTransactions.map((value) => (
+              {currentData.map((value) => (
                 <tr
                   key={value.id}
                   className="border-b border-[#e6eff5] last:border-b-0 text-[#232323] text-[14px]"
@@ -162,21 +176,12 @@ export const Table = () => {
           </table>
         </div>
 
-        {/* Pagination Arrows */}
-        <div className="flex justify-end items-center md:gap-6 mt-6 gap-5 text-[#1814F3]">
-          <div>
-            <LeftArrow />
-          </div>
-          <div>Previous</div>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>Next</div>
-          <div>
-            <RightArrow />
-          </div>
-        </div>
+        {/* Pagination  */}
+        <Pagination
+          totalPages={totalPages}
+          currentPage={currentPage}
+          pageOnChange={setCurrentPage}
+        />
       </div>
     </>
   );
