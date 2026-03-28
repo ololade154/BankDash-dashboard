@@ -38,7 +38,7 @@ export const Card = ({
           </p>
           <span className=" text-[12px]  font-semibold">Eddy Cusuma</span>
         </div>
-        <div className='flex flex-col'>
+        <div className="flex flex-col">
           <p
             className={`${textColor ? 'card-text-one' : 'card-text-two'} text-[10px] font-normal`}
           >
@@ -56,7 +56,7 @@ export const Card = ({
             : ''
         } flex justify-between items-center`}
       >
-        <p className="md:text-[15px] text-[13px] font-semibold">
+        <p className="md:text-[15px] text-[17px] font-semibold">
           3778 **** **** 1234
         </p>
         <div>
