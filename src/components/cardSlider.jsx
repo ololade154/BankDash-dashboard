@@ -3,14 +3,22 @@ import "swiper/css";
 import { Card } from "./card";
 import { cards } from "./cardData";
 
-export const CardSlider = ({ desktopSlides = 2, cardsToShow = cards }) => {
+export const CardSlider = ({
+  desktopSlides = 2,
+  cardsToShow = cards,
+  initialSlide = 0,
+}) => {
   return (
     <div className="w-full overflow-hidden">
       <Swiper
         spaceBetween={20}
+        grabCursor={true}
+        simulateTouch={true}
+        initialSlide={initialSlide}
+        touchEventsTarget="container"
         breakpoints={{
-          0: { slidesPerView: 1 }, // mobile
-          768: { slidesPerView: desktopSlides }, // desktop
+          0: { slidesPerView: 1 },
+          768: { slidesPerView: desktopSlides },
         }}
       >
         {cardsToShow.map((card) => (

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import {
   BarChart,
   Bar,
@@ -7,23 +7,23 @@ import {
   CartesianGrid,
   Legend,
   ResponsiveContainer,
-} from 'recharts';
+} from "recharts";
 
 const renderLegend = (props) => {
   const { payload } = props;
   return (
-    <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 25 }}>
+    <div style={{ display: "flex", justifyContent: "flex-end", gap: 25 }}>
       {payload.map((entry) => {
         const color =
-          entry.value === 'Deposit'
-            ? '#1814F3'
-            : entry.value === 'Withdraw'
-              ? '#FF82AC'
+          entry.value === "Deposit"
+            ? "#1814F3"
+            : entry.value === "Withdraw"
+              ? "#FF82AC"
               : entry.color;
         return (
           <div
             key={entry.value}
-            style={{ display: 'flex', alignItems: 'center', gap: 8 }}
+            style={{ display: "flex", alignItems: "center", gap: 8 }}
             className="text-[13px] inter-font font-normal bar-text-color"
           >
             <div
@@ -47,41 +47,30 @@ export const MyBarChart = () => {
 
   useEffect(() => {
     const update = () => setIsMobile(window.innerWidth < 640);
-    window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
 
   const data = [
-    { name: 'Sat', deposit: 498, withdraw: 250 },
-    { name: 'Sun', deposit: 350, withdraw: 110 },
-    { name: 'Mon', deposit: 348, withdraw: 298 },
-    { name: 'Tue', deposit: 498, withdraw: 398 },
-    { name: 'Wed', deposit: 170, withdraw: 220 },
-    { name: 'Thu', deposit: 405, withdraw: 270 },
-    { name: 'Fri', deposit: 400, withdraw: 320 },
+    { name: "Sat", deposit: 498, withdraw: 250 },
+    { name: "Sun", deposit: 350, withdraw: 110 },
+    { name: "Mon", deposit: 348, withdraw: 298 },
+    { name: "Tue", deposit: 498, withdraw: 398 },
+    { name: "Wed", deposit: 170, withdraw: 220 },
+    { name: "Thu", deposit: 405, withdraw: 270 },
+    { name: "Fri", deposit: 400, withdraw: 320 },
   ];
 
   return (
     <>
-      <style>{`
-        .recharts-wrapper, 
-        .recharts-wrapper:focus, 
-        .recharts-wrapper:focus-visible,
-        .recharts-surface, 
-        .recharts-surface:focus,
-        .recharts-surface:focus-visible {
-          outline: none;
-          box-shadow: none ;
-        }
-      `}</style>
       <div
         style={{
-          width: '100%',
+          width: "100%",
           height: isMobile ? 250 : 350,
-          backgroundColor: 'white',
-          padding: isMobile ? '10px 6px 0px 6px' : '15px 8px 0px 8px',
+          backgroundColor: "white",
+          padding: isMobile ? "10px 6px 0px 6px" : "15px 8px 0px 8px",
           borderRadius: 25,
-          outline: 'none',
+          outline: "none",
         }}
       >
         <ResponsiveContainer width="100%" height="100%">
@@ -106,9 +95,9 @@ export const MyBarChart = () => {
               axisLine={false}
               tickLine={false}
               tick={{
-                fill: '#718EBF',
+                fill: "#718EBF",
                 fontSize: 12,
-                fontFamily: 'Inter',
+                fontFamily: "Inter",
                 fontWeight: 400,
               }}
             />
@@ -116,9 +105,9 @@ export const MyBarChart = () => {
               domain={[0, 500]}
               ticks={[0, 100, 200, 300, 400, 500]}
               tick={{
-                fill: '#718EBF',
+                fill: "#718EBF",
                 fontSize: 12,
-                fontFamily: 'Inter',
+                fontFamily: "Inter",
                 fontWeight: 400,
               }}
               axisLine={false}
@@ -154,5 +143,86 @@ export const MyBarChart = () => {
         </ResponsiveContainer>
       </div>
     </>
+  );
+};
+
+export const BarChartTwo = () => {
+  const data = [
+    { name: "Sat", debit: 498, credit: 250 },
+    { name: "Sun", debit: 350, credit: 110 },
+    { name: "Mon", debit: 348, credit: 298 },
+    { name: "Tue", debit: 498, credit: 398 },
+    { name: "Wed", debit: 170, credit: 220 },
+    { name: "Thu", debit: 405, credit: 270 },
+    { name: "Fri", debit: 400, credit: 320 },
+  ];
+  // Calculate totals
+  const totalDebit = data.reduce((sum, item) => sum + item.debit, 0);
+  const totalCredit = data.reduce((sum, item) => sum + item.credit, 0);
+
+  const CustomLegend = () => (
+    <div className="flex items-center justify-end md:gap-4 gap-2 ">
+      <div className="flex items-center md:gap-2 gap-1">
+        <span className="w-3 h-3 bg-[#1A16F3] rounded-sm"></span>
+        <span className="md:text-[14px] text-[11px] text-[#718EBF]">Debit</span>
+      </div>
+      <div className="flex items-center md:gap-2 gap-1">
+        <span className="w-3 h-3 rounded-sm bg-[#FCAA0B]"></span>
+        <span className="md:text-[14px] text-[12px] text-[#718EBF]">
+          Credit
+        </span>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="w-full h-56 md:h-72 flex flex-col items-center overflow-x-auto bg-white p-3 md:p-6 pb-0 rounded-2xl">
+      <div className="flex items-center  justify-between w-full mb-4 ">
+        {/* Left: totals summary */}
+        <div className=" md:text-[14px] text-[11px] text-[#718EBF]">
+          <span>
+            <span className="font-medium text-[#333B69] ">
+              ${totalDebit.toLocaleString()}
+            </span>
+            &nbsp;Debited &amp; &nbsp;
+          </span>
+
+          <span>
+            <span className="font-medium text-[#333B69]">
+              ${totalCredit.toLocaleString()}
+            </span>
+            &nbsp;Credited in this week
+          </span>
+        </div>
+
+        {/* Right: legend */}
+        <CustomLegend />
+      </div>
+      <div className=" w-full h-full">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart
+            data={data}
+            barCategoryGap="20%"
+            margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
+          >
+            <XAxis
+              dataKey="name"
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: "#718EBF", fontSize: 12, fontWeight: 400 }}
+            />
+            <YAxis
+              domain={[0, 500]}
+              ticks={[0, 100, 200, 300, 400, 500]}
+              hide
+              axisLine={false}
+              tickLine={false}
+            />
+            <Bar dataKey="debit" fill="#1A16F3" radius={[5, 5, 5, 5]} />
+            <Bar dataKey="credit" fill="#FCAA0B" radius={[5, 5, 5, 5]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
   );
 };
