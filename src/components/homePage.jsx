@@ -1,9 +1,9 @@
-import { CardSlider } from './cardSlider';
-import { Transaction } from './transaction';
-import { MyBarChart } from './barChart';
-import MyPieChart from './pieChart';
-import { BalanceChart } from './balanceChart';
-import { NavLink } from 'react-router-dom';
+import { CardSlider } from "./cardSlider";
+import { Transaction } from "./transaction";
+import { MyBarChart } from "./barChart";
+import MyPieChart from "./pieChart";
+import { BalanceChart } from "./balanceChart";
+import { NavLink } from "react-router-dom";
 export const HomePage = () => {
   return (
     <div>
