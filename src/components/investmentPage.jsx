@@ -1,6 +1,9 @@
 import { IncomeIconThree } from "../Icons/incomeIconTwo";
 import { PieIcon } from "../Icons/pieIcon";
 import { RepeatIcon } from "../Icons/repeatIcon";
+import { InvestmentChartOne, InvestmentChartTwo } from "./investmentChart";
+import { InvestmentList } from "./investmentList";
+import { StockTable } from "./stockTable";
 
 export const InvestmentPage = () => {
   const investmentIcon = [
@@ -50,6 +53,38 @@ export const InvestmentPage = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="flex flex-col gap-y-6 mt-4 justify-between md:flex-row md:gap-x-8 md:items-center md:mt-6">
+        <div className="min-w-0 md:flex-1">
+          <div className="flex justify-between mb-4 md:mb-5 main-color font-semibold inter-font">
+            <h1 className="text-[18px] ">Yearly Total Investment</h1>
+          </div>
+          <InvestmentChartOne />
+        </div>
+        <div className="min-w-0 md:flex-1 md:shrink-0">
+          <div className="flex justify-between md:mb-5 mb-3 main-color font-semibold inter-font">
+            <div>
+              <h1 className="text-[18px] ">Monthly Revenue</h1>
+            </div>
+          </div>
+          <InvestmentChartTwo />
+        </div>
+      </div>
+      <div className="flex flex-col gap-y-6 mt-4 justify-between md:flex-row md:gap-x-8 md:items-center md:mt-6">
+        <div className="min-w-0 md:flex-2">
+          <div className="flex justify-between mb-4 md:mb-5 main-color font-semibold inter-font">
+            <h1 className="text-[18px] ">My Investment</h1>
+          </div>
+          <InvestmentList />
+        </div>
+        <div className="min-w-0 md:flex-1 md:shrink-0">
+          <div className="flex justify-between md:mb-5 mb-3 main-color font-semibold inter-font">
+            <div>
+              <h1 className="text-[18px] ">Trending Stock</h1>
+            </div>
+          </div>
+          <StockTable />
+        </div>
       </div>
     </div>
   );
