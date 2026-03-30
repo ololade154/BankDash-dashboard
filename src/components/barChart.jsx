@@ -164,11 +164,11 @@ export const BarChartTwo = () => {
     <div className="flex items-center justify-end md:gap-4 gap-2 ">
       <div className="flex items-center md:gap-2 gap-1">
         <span className="w-3 h-3 bg-[#1A16F3] rounded-sm"></span>
-        <span className="md:text-[14px] text-[11px] text-[#718EBF]">Debit</span>
+        <span className="md:text-[14px] text-[13px] text-[#718EBF]">Debit</span>
       </div>
       <div className="flex items-center md:gap-2 gap-1">
-        <span className="w-3 h-3 rounded-sm bg-[#FCAA0B]"></span>
-        <span className="md:text-[14px] text-[12px] text-[#718EBF]">
+        <span className="w-3 h-3 rounded-sm bg-[rgb(252,170,11)]"></span>
+        <span className="md:text-[14px] text-[13px] text-[#718EBF]">
           Credit
         </span>
       </div>
@@ -176,10 +176,10 @@ export const BarChartTwo = () => {
   );
 
   return (
-    <div className="w-full h-56 md:h-72 flex flex-col items-center overflow-x-auto bg-white p-3 md:p-6 pb-0 rounded-2xl">
-      <div className="flex items-center  justify-between w-full mb-4 ">
+    <div className="w-full h-56 md:h-72 flex flex-col items-center overflow-x-auto bg-white p-4 md:p-6 pb-0 rounded-2xl">
+      <div className="flex flex-col gap-y-1 md:flex-row items-start md:items-center md:justify-between w-full mb-4  ">
         {/* Left: totals summary */}
-        <div className=" md:text-[14px] text-[11px] text-[#718EBF]">
+        <div className=" md:text-[14px] text-[13px] text-[#718EBF]">
           <span>
             <span className="font-medium text-[#333B69] ">
               ${totalDebit.toLocaleString()}
