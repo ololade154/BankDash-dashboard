@@ -5,6 +5,7 @@ import { cards } from "./cardData";
 
 export const CardSlider = ({
   desktopSlides = 2,
+  mobileSlides = 1,
   cardsToShow = cards,
   initialSlide = 0,
 }) => {
@@ -17,7 +18,7 @@ export const CardSlider = ({
         initialSlide={initialSlide}
         touchEventsTarget="container"
         breakpoints={{
-          0: { slidesPerView: 1 },
+          0: { slidesPerView: mobileSlides },
           768: { slidesPerView: desktopSlides },
         }}
       >

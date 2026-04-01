@@ -47,6 +47,7 @@ export const HomePage = () => {
           <div className="flex justify-between mb-4 md:mb-5 main-color font-semibold inter-font h-250px ">
             <h1 className="text-[18px] ">Weekly Activity</h1>
           </div>
+          <MyPieChart />
         </div>
         <div className="min-w-0 md:flex-2">
           <div className="md:mb-5 mb-4 main-color font-semibold inter-font text-[18px]">
