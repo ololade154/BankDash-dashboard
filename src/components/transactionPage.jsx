@@ -1,6 +1,7 @@
-import { CardSlider } from './cardSlider';
-import { ExpenseChart } from './expenseChart';
-import { Table } from './table';
+import { CardSlider } from "./cardSlider";
+import { ExpenseChart } from "./expenseChart";
+import { Table } from "./table";
+import { NavLink } from "react-router-dom";
 
 export const TransactionPage = () => {
   return (
@@ -12,7 +13,9 @@ export const TransactionPage = () => {
               <h1 className="text-[18px] ">My Cards</h1>
             </div>
             <div>
-              <h2 className="text-[18px] ">+ Add Card </h2>
+              <NavLink to="/credit-card" className="text-[18px]">
+                + Add Card
+              </NavLink>
             </div>
           </div>
           <CardSlider />

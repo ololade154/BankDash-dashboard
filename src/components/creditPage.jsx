@@ -1,4 +1,8 @@
+import { AddCard } from "./addCard";
+import { CardList } from "./cardList";
+import { CardSettingList } from "./cardSetiingList";
 import { CardSlider } from "./cardSlider";
+import { BankDonutChart } from "./pieChart";
 
 export const CreditPage = () => {
   const cardData = [
@@ -49,6 +53,39 @@ export const CreditPage = () => {
         mobileSlides={1}
         initialSlide={cardData.length - 1}
       />
+
+      <div className="flex flex-col gap-y-6 mt-4 justify-between md:flex-row md:gap-x-8 md:items-center md:mt-6">
+        <div className="min-w-0 md:flex-1">
+          <div className="flex justify-between mb-4 md:mb-5 main-color font-semibold inter-font">
+            <h1 className="text-[18px] ">Card Expense Statistics</h1>
+          </div>
+          <BankDonutChart />
+        </div>
+        <div className="min-w-0 md:flex-2 md:shrink-0">
+          <div className="flex justify-between md:mb-5 mb-3 main-color font-semibold inter-font">
+            <div>
+              <h1 className="text-[18px] ">Card List</h1>
+            </div>
+          </div>
+          <CardList />
+        </div>
+      </div>
+      <div className="flex flex-col gap-y-6 mt-4 justify-between md:flex-row md:gap-x-8 md:items-center md:mt-6">
+        <div className="min-w-0 md:flex-2">
+          <div className="flex justify-between mb-4 md:mb-5 main-color font-semibold inter-font">
+            <h1 className="text-[18px] ">Add New Card</h1>
+          </div>
+          <AddCard />
+        </div>
+        <div className="min-w-0 md:flex-1 md:shrink-0">
+          <div className="flex justify-between md:mb-5 mb-3 main-color font-semibold inter-font">
+            <div>
+              <h1 className="text-[18px] ">Card Setting </h1>
+            </div>
+          </div>
+          <CardSettingList />
+        </div>
+      </div>
     </div>
   );
 };
