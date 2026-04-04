@@ -55,10 +55,10 @@ export const CardSettingList = () => {
               </div>
 
               <div className="">
-                <h1 className="font-medium md:text-[14px] text-[16px] text-[#232323] ">
+                <h1 className="font-medium md:text-[16px] text-[19px] text-[#232323] ">
                   {value.header}
                 </h1>
-                <p className="font-normal md:text-[11px] text-[12px]  text-[#718EBF]">
+                <p className="font-normal md:text-[14px] text-[15px]  text-[#718EBF]">
                   {value.content}
                 </p>
               </div>
