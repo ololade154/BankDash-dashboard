@@ -1,3 +1,8 @@
+import { ServiceSlider } from "./serviceSlider";
 export const ServicePage = () => {
-  return <div>Servicepage</div>;
+  return (
+    <div>
+      <ServiceSlider />
+    </div>
+  );
 };
