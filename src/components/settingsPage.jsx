@@ -3,7 +3,6 @@ export const SettingsPage = () => {
     <div>
       Settings
       <h1>Hello</h1>
-      <h2>Ololade</h2>
     </div>
   );
 };

@@ -9,6 +9,7 @@ import { ScrollToTop } from "./components/scrollToTop";
 import { TransactionPage } from "./components/transactionPage";
 import { LoanPage } from "./components/loanPage";
 import { ServicePage } from "./components/servicePage";
+import { SettingsPage } from "./components/settingsPage";
 export const App = () => {
   return (
     <>
@@ -22,6 +23,7 @@ export const App = () => {
           <Route path="/credit-card" element={<CreditPage />} />
           <Route path="/loans" element={<LoanPage />} />
           <Route path="/services" element={<ServicePage />} />
+          <Route path="/settings" element={<SettingsPage />} />
         </Route>
         <Route path="/login" element={<Login />} />
       </Routes>
