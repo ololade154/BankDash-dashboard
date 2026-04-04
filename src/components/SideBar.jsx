@@ -7,7 +7,7 @@ import { CreditIcon } from "../Icons/creditIcon";
 import { LoanIcon } from "../Icons/loanIcon";
 import { ServiceIcon } from "../Icons/serviceIcon";
 import { SettingsIcon } from "../Icons/settingsIcon";
-
+import { PriviledgeIcon } from "../Icons/priviledgeIcon";
 export const SideBar = () => {
   const features = [
     { name: "Dashboard", icon: <House />, path: "/" },
@@ -17,6 +17,7 @@ export const SideBar = () => {
     { name: "Credit Card", icon: <CreditIcon />, path: "/credit-card" },
     { name: "Loans", icon: <LoanIcon />, path: "/loans" },
     { name: "Services", icon: <ServiceIcon />, path: "/services" },
+    { name: "My Priviledges", icon: <PriviledgeIcon />, path: "/priviledges" },
     { name: "Settings", icon: <SettingsIcon />, path: "/settings" },
   ];
   return (
@@ -27,7 +28,7 @@ export const SideBar = () => {
       </div>
 
       {/* Features */}
-      <div className="flex flex-col gap-y-8">
+      <div className="flex flex-col gap-y-6">
         {features.map((feature) => (
           <NavLink
             key={feature.name}

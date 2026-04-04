@@ -55,7 +55,7 @@ export const LoanSlider = ({
       >
         {loanItems.map((item) => (
           <SwiperSlide key={item.id} className="flex justify-center">
-            <div className="bg-white md:py-6 py-6 md:rounded-3xl rounded-2xl flex items-center justify-center md:gap-x-4 gap-x-3 w-full ">
+            <div className="bg-white md:py-6 py-4 md:rounded-3xl rounded-2xl flex items-center justify-center md:gap-x-4 gap-x-2 w-full ">
               <div
                 className="w-12 h-12 flex items-center justify-center rounded-full"
                 style={{ backgroundColor: item.bgColor }}
