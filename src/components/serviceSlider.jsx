@@ -33,7 +33,7 @@ export const ServiceSlider = ({
   initialSlide = 0,
 }) => {
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full">
       <Swiper
         spaceBetween={20}
         grabCursor={true}
@@ -46,7 +46,7 @@ export const ServiceSlider = ({
         }}
       >
         {serviceItems.map((item) => (
-          <SwiperSlide key={item.id} className="flex justify-center">
+          <SwiperSlide key={item.id}>
             <div className="bg-white md:py-6 py-6 md:rounded-3xl rounded-2xl flex items-center justify-center md:gap-x-4 gap-x-3 w-full ">
               <div
                 className="w-12 h-12 flex items-center justify-center rounded-full"
