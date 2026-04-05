@@ -31,11 +31,11 @@ export const InvestmentPage = () => {
   ];
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8  ">
+      <div className="grid grid-cols-1 md:grid-cols-3 md:gap-20 gap-8  ">
         {investmentIcon.map((item) => (
           <div
             key={item.id}
-            className="bg-white md:py-6 py-6 px-5 md:rounded-3xl rounded-2xl flex item-start md:justify-center md:px-0 md:gap-x-4 gap-3 w-full max-w-full"
+            className="bg-white md:py-6 py-6 px-5 md:rounded-3xl rounded-2xl flex item-start md:justify-center md:px-0 md:gap-x-4 gap-3 w-full "
           >
             <div
               className="w-12 h-12 flex items-center justify-center rounded-full shrink-0 "
