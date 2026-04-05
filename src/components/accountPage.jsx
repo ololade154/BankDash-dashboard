@@ -42,7 +42,7 @@ export const AccountPage = () => {
   ];
   return (
     <div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6  ">
+      <div className="grid grid-cols-2 md:grid-cols-4 md:gap-14 gap-6 ">
         {accountIcon.map((item) => (
           <div
             key={item.id}

@@ -1,26 +1,29 @@
-import { Menu } from 'lucide-react';
-import { useState } from 'react';
-import { NavImage } from './NavImage';
-import { useLocation } from 'react-router';
-import { SearchBar } from './searchBar';
-import { SettingIcon } from '../Icons/settingIcon';
-import { NotificationIcon } from '../Icons/notificationIcon';
-import { MobileMenu } from './mobileMenu';
+import { Menu } from "lucide-react";
+import { useState } from "react";
+import { NavImage } from "./NavImage";
+import { useLocation } from "react-router";
+import { SearchBar } from "./searchBar";
+import { SettingIcon } from "../Icons/settingIcon";
+import { NotificationIcon } from "../Icons/notificationIcon";
+import { MobileMenu } from "./mobileMenu";
 
 export const NavBar = () => {
   const location = useLocation();
   const [toggle, setToggle] = useState(false);
 
   const routeTitles = {
-    '/': 'Overview',
-    '/transactions': 'Transactions',
-    '/accounts': 'Accounts',
-    '/investments': 'Investments',
-    '/credit-card': 'Credit Cards',
-    '/login': 'Login',
+    "/": "Overview",
+    "/transactions": "Transactions",
+    "/accounts": "Accounts",
+    "/investments": "Investments",
+    "/credit-card": "Credit Cards",
+    "/loans": "Loans",
+    "/services": "Services",
+    "/settings": "Settings",
+    "/login": "Login",
   };
 
-  const title = routeTitles[location.pathname] || 'OverView';
+  const title = routeTitles[location.pathname] || "OverView";
 
   return (
     <>
