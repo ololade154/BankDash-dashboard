@@ -151,7 +151,7 @@ export function BankDonutChart() {
   );
 
   return (
-    <div className="w-full md:h-80  bg-white rounded-xl md:p-4 p-2">
+    <div className="w-full bg-white rounded-xl md:p-4 p-2">
       <ResponsiveContainer width="100%" aspect={1}>
         <PieChart>
           {dataWithAngles.map((entry) => (
