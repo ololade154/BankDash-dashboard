@@ -84,7 +84,8 @@ export const CardList = () => {
       borderRadius: "24px",
       padding: "24px",
       width: "100%",
-      maxWidth: "420px",
+      maxWidth: "400px",
+      margin: "16px",
       boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
     },
   };
@@ -106,20 +107,20 @@ export const CardList = () => {
               </div>
 
               <div className="flex flex-col min-w-0">
-                <div className="text-[#232323] text-[16px] md:text-[15px] font-semibold">
+                <div className="text-[#232323] text-[14px] md:text-[15px] font-semibold">
                   {item.header}
                 </div>
-                <div className="text-[#718EBF] text-[13px] font-normal">
+                <div className="text-[#718EBF] text-[12px] md:text-[13px] font-normal">
                   {item.cardType}
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col min-w-0">
-              <div className="text-[16px] md:text-[15px] font-medium">
+              <div className="text-[14px] md:text-[15px] font-medium">
                 {item.bankHeader}
               </div>
-              <div className="text-[#718EBF] text-[13px] font-normal">
+              <div className="text-[#718EBF] text-[12px]  md:text-[13px] font-normal">
                 {item.bankType}
               </div>
             </div>
@@ -140,7 +141,7 @@ export const CardList = () => {
 
             <button
               onClick={() => openModal(item)}
-              className="flex justify-end items-center min-w-0 text-[16px] md:text-[15px] font-medium text-[#1814F3] bg-transparent border-none cursor-pointer"
+              className="flex justify-end items-center min-w-0 text-[11px] md:text-[15px] font-medium text-[#1814F3] bg-transparent border-none cursor-pointer"
             >
               {item.viewDetails}
             </button>
