@@ -23,7 +23,6 @@ export const AddCard = () => {
         {/* Card Name */}
         <div className="flex flex-col">
           <label className="text-[#232323] font-normal text-[14px] mb-1">
-            {" "}
             Name on Card
           </label>
           <input
