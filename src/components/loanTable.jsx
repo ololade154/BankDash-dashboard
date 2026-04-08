@@ -1,4 +1,22 @@
+import { useState } from "react";
+import Modal from "react-modal";
 export const LoanTable = () => {
+  const [selectedLoan, setSelectedLoan] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (loan) => {
+    setSelectedLoan(loan);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+
+    // wait for animation before removing content
+    setTimeout(() => {
+      setSelectedLoan(null);
+    }, 100);
+  };
   const loanValue = [
     {
       id: 1,
@@ -81,6 +99,26 @@ export const LoanTable = () => {
       repay: "Repay",
     },
   ];
+  const modalStyles = {
+    overlay: {
+      backgroundColor: "rgba(0, 0, 0, 0.45)",
+      zIndex: 1000,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    content: {
+      position: "relative",
+      inset: "auto",
+      border: "none",
+      borderRadius: "24px",
+      padding: "24px",
+      width: "100%",
+      maxWidth: "400px",
+      boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
+      margin: "16px",
+    },
+  };
   const totals = loanValue.reduce(
     (sum, item) => {
       const loan = Number(item.loan.replace(/[$,]/g, ""));
@@ -120,9 +158,12 @@ export const LoanTable = () => {
               {value.leftToRepay}
             </div>
             <div className="flex-1 py-3 px-3 font-normal">
-              <span className="py-1.5 px-3  border border-[#1814F3] rounded-full text-[#1814F3]">
+              <button
+                onClick={() => openModal(value)}
+                className="py-1.5 px-3 border border-[#1814F3] rounded-full text-[#1814F3]"
+              >
                 {value.repay}
-              </span>
+              </button>
             </div>
           </div>
         ))}
@@ -169,9 +210,12 @@ export const LoanTable = () => {
                 <td className="py-4 px-4 font-normal">{value.interestRate}</td>
                 <td className="py-4 px-4 font-normal">{value.installment}</td>
                 <td className="py-4 px-4 font-normal">
-                  <span className="py-2 px-6 border border-[#1814F3] rounded-full text-[#1814F3]">
+                  <button
+                    onClick={() => openModal(value)}
+                    className="py-1.5 px-3 border border-[#1814F3] rounded-full text-[#1814F3]"
+                  >
                     {value.repay}
-                  </span>
+                  </button>
                 </td>
               </tr>
             ))}
@@ -199,6 +243,75 @@ export const LoanTable = () => {
           </tfoot>
         </table>
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        style={modalStyles}
+        closeTimeoutMS={100}
+      >
+        {selectedLoan && (
+          <div className="space-y-5">
+            {/* Header */}
+            <div>
+              <div className="text-[#232323] text-[18px] font-semibold">
+                Loan Repayment
+              </div>
+              <div className="text-[#718EBF] text-[13px]">
+                Review your loan details before repayment
+              </div>
+            </div>
+
+            <div className="border-t border-gray-200" />
+
+            {/* Loan Details */}
+            <div className="grid grid-cols-2 gap-y-4">
+              <div>
+                <div className="text-[#232323] font-semibold text-[14px]">
+                  Loan
+                </div>
+                <div className="text-[#718EBF] text-[13px]">
+                  {selectedLoan.loan}
+                </div>
+              </div>
+
+              <div>
+                <div className="text-[#232323] font-semibold text-[14px]">
+                  Left to Repay
+                </div>
+                <div className="text-[#718EBF] text-[13px]">
+                  {selectedLoan.leftToRepay}
+                </div>
+              </div>
+
+              <div>
+                <div className="text-[#232323] font-semibold text-[14px]">
+                  Duration
+                </div>
+                <div className="text-[#718EBF] text-[13px]">
+                  {selectedLoan.duration}
+                </div>
+              </div>
+
+              <div>
+                <div className="text-[#232323] font-semibold text-[14px]">
+                  Installment
+                </div>
+                <div className="text-[#718EBF] text-[13px]">
+                  {selectedLoan.installment}
+                </div>
+              </div>
+            </div>
+
+            {/* Close Button */}
+            <button
+              onClick={closeModal}
+              className="mt-4 w-full py-3 rounded-2xl bg-[#1814F3] text-white text-[15px] font-medium border-none"
+            >
+              Close
+            </button>
+          </div>
+        )}
+      </Modal>
     </div>
   );
 };
