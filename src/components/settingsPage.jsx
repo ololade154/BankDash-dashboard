@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { EditProfile } from "./editProfile";
 import { PreferencesPage } from "./preferencesPage";
 import { SecurityPage } from "./securityPage";
-
+import { Loader } from "./loader";
 export const SettingsPage = () => {
   const [activeTab, setActiveTab] = useState("editProfile");
   const renderTab = () => {
@@ -17,6 +17,19 @@ export const SettingsPage = () => {
         return null;
     }
   };
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // simulate loading (like fetching API)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div className="bg-white py-2 px-4 md:py-3 md:px-6 rounded-3xl">
       {/* Tabs */}

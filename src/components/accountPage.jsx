@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { BalanceIcon } from "../Icons/balanceIcon";
 import { IncomeIconTwo } from "../Icons/incomeIconTwo";
 import { ExpenseTwoIcon } from "../Icons/expenseTwoIcon";
@@ -8,6 +9,7 @@ import { NavLink } from "react-router";
 import { LastTransaction } from "./lastTransaction";
 import { InvoiceValue } from "./invoiceValue";
 import { BarChartTwo } from "./barChart";
+import { Loader } from "./loader";
 
 export const AccountPage = () => {
   const accountIcon = [
@@ -40,6 +42,20 @@ export const AccountPage = () => {
       price: "$7,920",
     },
   ];
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // simulate loading (like fetching API)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div>
       <div className="grid grid-cols-2 md:grid-cols-4 md:gap-14 gap-6 ">
