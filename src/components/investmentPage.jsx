@@ -1,10 +1,11 @@
+import { useState, useEffect } from "react";
 import { IncomeIconThree } from "../Icons/incomeIconTwo";
 import { PieIcon } from "../Icons/pieIcon";
 import { RepeatIcon } from "../Icons/repeatIcon";
 import { InvestmentChartOne, InvestmentChartTwo } from "./investmentChart";
 import { InvestmentList } from "./investmentList";
 import { StockTable } from "./stockTable";
-
+import { Loader } from "./loader";
 export const InvestmentPage = () => {
   const investmentIcon = [
     {
@@ -29,6 +30,19 @@ export const InvestmentPage = () => {
       value: "+5.80%",
     },
   ];
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // simulate loading (like fetching API)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-20 gap-8  ">

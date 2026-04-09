@@ -1,9 +1,23 @@
+import { useState, useEffect } from "react";
 import { CardSlider } from "./cardSlider";
 import { ExpenseChart } from "./expenseChart";
 import { Table } from "./table";
 import { NavLink } from "react-router-dom";
-
+import { Loader } from "./loader";
 export const TransactionPage = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // simulate loading (like fetching API)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div>
       <div className="flex flex-col gap-y-6 md:flex-row md:gap-x-8 md:items-start justify-between">

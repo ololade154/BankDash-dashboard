@@ -1,8 +1,10 @@
+import { useState, useEffect } from "react";
 import { AddCard } from "./addCard";
 import { CardList } from "./cardList";
 import { CardSettingList } from "./cardSetiingList";
 import { CardSlider } from "./cardSlider";
 import { BankDonutChart } from "./pieChart";
+import { Loader } from "./loader";
 
 export const CreditPage = () => {
   const cardData = [
@@ -44,6 +46,19 @@ export const CreditPage = () => {
       textColor: true,
     },
   ];
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // simulate loading (like fetching API)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="w-full">
