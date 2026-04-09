@@ -1,6 +1,21 @@
+import { useState, useEffect } from "react";
 import { BankServiceList } from "./bankServiceList";
 import { ServiceSlider } from "./serviceSlider";
+import { Loader } from "./loader";
 export const ServicePage = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // simulate loading (like fetching API)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div>
       <ServiceSlider />
