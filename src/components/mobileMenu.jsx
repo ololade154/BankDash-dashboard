@@ -14,7 +14,7 @@ import { X } from "lucide-react";
 export const MobileMenu = ({ toggle, setToggle }) => {
   const [active, setActive] = useState("Dashboard");
   const features = [
-    { name: "Dashboard", icon: <House />, path: "/dashboard" },
+    { name: "Dashboard", icon: <House />, path: "/" },
     { name: "Transaction", icon: <TransactionIcon />, path: "/transactions" },
     { name: "Accounts", icon: <UserIcon />, path: "/accounts" },
     { name: "Investments", icon: <InvestmentIcon />, path: "/investments" },

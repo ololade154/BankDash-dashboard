@@ -10,7 +10,7 @@ import { SettingsIcon } from "../Icons/settingsIcon";
 
 export const SideBar = () => {
   const features = [
-    { name: "Dashboard", icon: <House />, path: "/dashboard" },
+    { name: "Dashboard", icon: <House />, path: "/" },
     { name: "Transaction", icon: <TransactionIcon />, path: "/transactions" },
     { name: "Accounts", icon: <UserIcon />, path: "/accounts" },
     { name: "Investments", icon: <InvestmentIcon />, path: "/investments" },
@@ -32,7 +32,7 @@ export const SideBar = () => {
           <NavLink
             key={feature.name}
             to={feature.path}
-            end={feature.path === "/dashboard"} // ← fixes Dashboard always-active bug too
+            end={feature.path === "/"} // ← fixes Dashboard always-active bug too
             className={({ isActive }) =>
               `relative flex items-center px-8 inter-font cursor-pointer ${
                 isActive ? "active-color" : "icon-color"
