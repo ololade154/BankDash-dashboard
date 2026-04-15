@@ -10,29 +10,29 @@ import { TransactionPage } from "./components/transactionPage";
 import { LoanPage } from "./components/loanPage";
 import { ServicePage } from "./components/servicePage";
 import { SettingsPage } from "./components/settingsPage";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "react-hot-toast";
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// import { Toaster } from "react-hot-toast";
 export const App = () => {
-  const queryClient = new QueryClient();
+  // const queryClient = new QueryClient();
   return (
     <>
-      <QueryClientProvider client={queryClient}>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route element={<Layout />}>
-            <Route path="/dashboard" element={<HomePage />} />
-            <Route path="/transactions" element={<TransactionPage />} />
-            <Route path="/accounts" element={<AccountPage />} />
-            <Route path="/investments" element={<InvestmentPage />} />
-            <Route path="/credit-card" element={<CreditPage />} />
-            <Route path="/loans" element={<LoanPage />} />
-            <Route path="/services" element={<ServicePage />} />
-            <Route path="/settings" element={<SettingsPage />} />
-          </Route>
-        </Routes>
-        <Toaster />
-      </QueryClientProvider>
+      {/* <QueryClientProvider client={queryClient}> */}
+      <ScrollToTop />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/transactions" element={<TransactionPage />} />
+          <Route path="/accounts" element={<AccountPage />} />
+          <Route path="/investments" element={<InvestmentPage />} />
+          <Route path="/credit-card" element={<CreditPage />} />
+          <Route path="/loans" element={<LoanPage />} />
+          <Route path="/services" element={<ServicePage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+        </Route>
+      </Routes>
+      {/* <Toaster /> */}
+      {/* </QueryClientProvider> */}
     </>
   );
 };
