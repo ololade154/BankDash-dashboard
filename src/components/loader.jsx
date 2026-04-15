@@ -8,3 +8,7 @@ export const Loader = () => {
     </div>
   );
 };
+
+export const ButtonLoader = () => {
+  return <TailChase size="20" speed="2.4" color="blue" />;
+};
